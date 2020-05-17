@@ -7,26 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f46a30d-0ab0-4b0e-a06e-32330b3c6916" name="Default Changelist" comment="start dierenas">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/4/442292b8a7efeabbe4cc176709b833b1792140ec" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/60b9d2629aee2ec4971cb46fd2bc6fc825955f07" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/2/e2ca5559f4e7308bcf4de8bf0eacc0fd0bf08a35" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/DierenAsielAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/DierenAsielApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/core/Dier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/core/DierVerblijf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/core/Verblijf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DierenAsiel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DierenAsiel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/core/DierVerblijf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/core/DierVerblijf.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,19 +61,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mariadb&#10;mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="dierenasiel" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/javax.transaction.jar!/" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15625" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.4368482" />
+    <property name="settings.editor.selected.configurable" value="com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -188,12 +180,24 @@
       <workItem from="1589648171770" duration="601000" />
       <workItem from="1589648787314" duration="2973000" />
       <workItem from="1589651782143" duration="9697000" />
-      <workItem from="1589713731134" duration="12502000" />
+      <workItem from="1589713731134" duration="13240000" />
     </task>
+    <task id="LOCAL-00001" summary="beign is er">
+      <created>1589729019870</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589729019870</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="beign is er" />
+    <option name="LAST_COMMIT_MESSAGE" value="beign is er" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="358" key="#Assign_Data_Sources" timestamp="1589717718695">
@@ -220,10 +224,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1015" y="196" key="#docker-wildfly/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589620620193" />
-    <state x="905" y="294" key="CommitChangelistDialog2" timestamp="1589624449696">
+    <state x="905" y="294" key="CommitChangelistDialog2" timestamp="1589729019119">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589624449696" />
+    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589729019119" />
     <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1589725357759">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -256,10 +260,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1108" y="411" key="RollbackChangesDialog/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589662781567" />
-    <state x="760" y="274" key="SettingsEditor" timestamp="1589726807745">
+    <state x="760" y="274" key="SettingsEditor" timestamp="1589729674938">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="760" y="274" key="SettingsEditor/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589726807745" />
+    <state x="760" y="274" key="SettingsEditor/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589729674938" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1589729021638">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589729021638" />
+    <state x="984" y="593" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589729665366">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="984" y="593" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589729665366" />
     <state x="976" y="432" width="607" height="536" key="find.popup" timestamp="1589718274392">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

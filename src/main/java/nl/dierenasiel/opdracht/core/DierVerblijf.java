@@ -1,5 +1,6 @@
 package nl.dierenasiel.opdracht.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,13 +23,13 @@ public class DierVerblijf implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn
-//    @JsonIgnore
+    @JsonIgnore
     private Dier dier;
 
     @Id
     @ManyToOne
     @JoinColumn
-//    @JsonIgnore
+    @JsonIgnore
     private Verblijf verblijf;
 
     private Long aanwezig;
