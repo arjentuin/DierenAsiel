@@ -1,4 +1,4 @@
-package nl.dierenasiel.opdracht.core;
+package nl.dierenasiel.opdracht.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

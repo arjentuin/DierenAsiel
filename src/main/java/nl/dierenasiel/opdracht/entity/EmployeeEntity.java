@@ -1,7 +1,6 @@
-package nl.dierenasiel.opdracht.core;
+package nl.dierenasiel.opdracht.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
