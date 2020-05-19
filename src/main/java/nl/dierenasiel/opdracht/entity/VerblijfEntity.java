@@ -24,8 +24,7 @@ public class VerblijfEntity implements Serializable {
     @Column(name = "naam", nullable = false)
     private String naam;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "verblijf_id")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "verblijf")
     private Set<DierEntity> dieren;
 
     public Integer getVerblijfId() {

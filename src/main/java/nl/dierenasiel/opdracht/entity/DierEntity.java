@@ -28,7 +28,7 @@ public class DierEntity implements Serializable {
     private LocalDateTime registratieDatum;
 
     @JsonIgnore
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private VerblijfEntity verblijf;
 
     public Integer getDierId() {
@@ -69,5 +69,17 @@ public class DierEntity implements Serializable {
 
     public void setVerblijf(VerblijfEntity verblijf) {
         this.verblijf = verblijf;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DierEntity )) return false;
+        return dierId != null && dierId.equals(((DierEntity) o).getDierId());
+    }
+
+    @Override
+    public int hashCode() {
+        return 31;
     }
 }
