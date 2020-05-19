@@ -6,6 +6,8 @@
         <jta-data-source>java:jboss/datasources/DierenAsielDS</jta-data-source>
         <class>nl.dierenasiel.opdracht.entity.EmployeeEntity</class>
         <class>nl.dierenasiel.opdracht.entity.AccountEntity</class>
+        <class>nl.dierenasiel.opdracht.entity.DierEntity</class>
+        <class>nl.dierenasiel.opdracht.entity.VerblijfEntity</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db:3306/cursus?useSSL=false" />
