@@ -7,13 +7,13 @@ import nl.dierenasiel.opdracht.dto.VerblijvenDto;
 import nl.dierenasiel.opdracht.model.DierEntity;
 import nl.dierenasiel.opdracht.model.VerblijfEntity;
 
-import javax.enterprise.context.RequestScoped;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
-@RequestScoped
+@Stateless
 public class DierenAsielService {
 
     @PersistenceContext
@@ -53,6 +53,7 @@ public class DierenAsielService {
                 dierDtoList.add(toDierDto(dierEntity));
             });
             verblijfDto.setDieren(dierDtoList);
+
             verblijfDtoList.add(verblijfDto);
         });
 
@@ -61,6 +62,12 @@ public class DierenAsielService {
         return verblijvenDto;
     }
 
+
+    public void createVerblijf(VerblijfDto verblijf) {
+        VerblijfEntity verblijfEntity = new VerblijfEntity();
+        verblijfEntity.setNaam(verblijf.getNaam());
+        em.persist(verblijfEntity);
+    }
 
     private DierDto toDierDto(DierEntity dierEntity) {
         DierDto dierDto = new DierDto();
@@ -77,6 +84,5 @@ public class DierenAsielService {
         dierDto.setVerblijf(verblijfDto);
         return dierDto;
     }
-
 
 }

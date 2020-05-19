@@ -12,9 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity(name = "Verblijf")
-@Table(name = "Verblijf", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "id"),
-        @UniqueConstraint(columnNames = "naam")})
+@Table(name = "Verblijf", uniqueConstraints = {@UniqueConstraint(columnNames = "id")})
 @NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM Verblijf f")
 public class VerblijfEntity implements Serializable {
 
@@ -25,7 +23,7 @@ public class VerblijfEntity implements Serializable {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @Column(name = "naam", nullable = false)
+    @Column(name = "naam")
     private String naam;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "verblijf")
