@@ -1,10 +1,12 @@
 package nl.dierenasiel.opdracht.core;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity(name = "ForeignKeyAssoAccountEntity")
-@Table(name = "ACCOUNT", uniqueConstraints = {
+@Table(name = "Account", uniqueConstraints = {
         @UniqueConstraint(columnNames = "ID")})
 public class AccountEntity implements Serializable {
     private static final long serialVersionUID = -6790693372846798580L;
@@ -17,6 +19,7 @@ public class AccountEntity implements Serializable {
     @Column(name = "ACC_NUMBER", unique = true, nullable = false, length = 100)
     private String accountNumber;
 
+    @JsonIgnore
     @ManyToOne
     private EmployeeEntity employee;
 

@@ -1,6 +1,7 @@
 package nl.dierenasiel.opdracht.core;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -31,7 +32,7 @@ public class EmployeeEntity implements Serializable {
     @Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)
     private String lastName;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "EMPLOYEE_ID")
     private Set<AccountEntity> accounts;
 
