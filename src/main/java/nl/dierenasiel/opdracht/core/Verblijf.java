@@ -18,8 +18,8 @@ public class Verblijf implements Serializable {
 
     private String naam;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "verblijf", cascade = CascadeType.ALL)
-    private Set<DierVerblijf> dierVerblijfs = new HashSet<>();
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "verblijf", cascade = CascadeType.ALL)
+//    private Set<Dier> dierVerblijfs = new HashSet<>();
 
     public Verblijf() {
 

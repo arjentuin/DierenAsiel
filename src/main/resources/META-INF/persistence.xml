@@ -5,8 +5,9 @@
     <persistence-unit name="cursus" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/DierenAsielDS</jta-data-source>
         <class>nl.dierenasiel.opdracht.core.Dier</class>
-        <class>nl.dierenasiel.opdracht.core.DierVerblijf</class>
         <class>nl.dierenasiel.opdracht.core.Verblijf</class>
+        <class>nl.dierenasiel.opdracht.core.EmployeeEntity</class>
+        <class>nl.dierenasiel.opdracht.core.AccountEntity</class>
 
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db:3306/cursus?useSSL=false" />

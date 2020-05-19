@@ -1,13 +1,11 @@
 package nl.dierenasiel.opdracht.core;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 
 @Data
@@ -28,20 +26,20 @@ public class Dier {
     @Column(name = "registratie_datum")
     private LocalDateTime registratieDatum;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "dier", cascade = CascadeType.ALL)
-    private Set<DierVerblijf> dierVerblijfs;
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "dier", cascade = CascadeType.ALL)
+//    private Set<Verblijf> verblijven = new HashSet<>();
 
     public Dier() {
     }
 
     public Dier(String soort, String naam,
                 LocalDateTime registratieDatum,
-                DierVerblijf... dierVerblijfs) {
+                Set<Verblijf> verblijven) {
         this.soort = soort;
         this.naam = naam;
         this.registratieDatum = registratieDatum;
-        for (DierVerblijf dierVerblijf : dierVerblijfs) dierVerblijf.setDier(this);
-        this.dierVerblijfs = Stream.of(dierVerblijfs).collect(Collectors.toSet());
+//        this.verblijven = verblijven;
+
     }
 
 }

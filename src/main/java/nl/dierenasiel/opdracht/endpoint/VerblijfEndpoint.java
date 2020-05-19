@@ -1,6 +1,6 @@
 package nl.dierenasiel.opdracht.endpoint;
 
-import nl.dierenasiel.opdracht.core.Dier;
+import nl.dierenasiel.opdracht.core.Verblijf;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -12,15 +12,16 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Stateless
-@Path("/dier")
-public class DierEndpoint {
+@Path("/verblijf")
+public class VerblijfEndpoint {
 
     @PersistenceContext
     private EntityManager em;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Dier> getDieren() {
-        return em.createNamedQuery("Dier.findAll").getResultList();
+    public List<Verblijf> getVerblijf() {
+        return em.createNamedQuery("DierVerblijf.findAll").getResultList();
+
     }
 }
