@@ -1,17 +1,21 @@
-package nl.dierenasiel.opdracht.entity;
+package nl.dierenasiel.opdracht.model;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @NoArgsConstructor
-@Entity(name = "ForeignKeyAssoEntityVerblijf")
+@Getter
+@Setter
+@Entity(name = "Verblijf")
 @Table(name = "Verblijf", uniqueConstraints = {
         @UniqueConstraint(columnNames = "id"),
         @UniqueConstraint(columnNames = "naam")})
-@NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM ForeignKeyAssoEntityVerblijf f")
+@NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM Verblijf f")
 public class VerblijfEntity implements Serializable {
 
     private static final long serialVersionUID = -1798070786993154656L;
@@ -19,7 +23,7 @@ public class VerblijfEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true, nullable = false)
-    private Integer verblijfId;
+    private Long id;
 
     @Column(name = "naam", nullable = false)
     private String naam;
@@ -27,27 +31,4 @@ public class VerblijfEntity implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "verblijf")
     private Set<DierEntity> dieren;
 
-    public Integer getVerblijfId() {
-        return verblijfId;
-    }
-
-    public void setVerblijfId(Integer verblijfId) {
-        this.verblijfId = verblijfId;
-    }
-
-    public String getNaam() {
-        return naam;
-    }
-
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
-    public Set<DierEntity> getDieren() {
-        return dieren;
-    }
-
-    public void setDieren(Set<DierEntity> dieren) {
-        this.dieren = dieren;
-    }
 }

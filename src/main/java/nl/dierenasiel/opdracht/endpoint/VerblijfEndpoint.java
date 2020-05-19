@@ -1,26 +1,33 @@
 package nl.dierenasiel.opdracht.endpoint;
 
-import nl.dierenasiel.opdracht.entity.VerblijfEntity;
+import nl.dierenasiel.opdracht.services.DierenAsielService;
 
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
+import javax.ws.rs.core.Response;
 
 @Stateless
 @Path("/verblijf")
 public class VerblijfEndpoint {
 
-    @PersistenceContext
-    private EntityManager em;
+    private DierenAsielService dierenAsielService;
+
+    public VerblijfEndpoint() {
+    }
+
+    @Inject()
+    public VerblijfEndpoint(DierenAsielService dierenAsielService) {
+        this.dierenAsielService = dierenAsielService;
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<VerblijfEntity> getVerblijf() {
-        return em.createNamedQuery("Verblijf.findAll").getResultList();
+    public Response getVerblijven() {
+        return Response.ok(dierenAsielService.getVerblijven()).build();
     }
+
 }
