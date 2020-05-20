@@ -8,8 +8,6 @@ import lombok.Setter;
 import java.util.List;
 
 @NoArgsConstructor
-@Getter
-@Setter
 @Data
 public class VerblijvenDto {
 

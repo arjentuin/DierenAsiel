@@ -2,7 +2,7 @@ package nl.dierenasiel.opdracht.endpoint;
 
 import nl.dierenasiel.opdracht.services.DierenAsielService;
 
-import javax.ejb.Stateless;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -11,7 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@Stateless
+@ApplicationScoped
 @Path("/dier")
 public class DierEndpoint {
 

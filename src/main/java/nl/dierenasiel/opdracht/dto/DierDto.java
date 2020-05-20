@@ -8,8 +8,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
-@Getter
-@Setter
 @Data
 public class DierDto {
 

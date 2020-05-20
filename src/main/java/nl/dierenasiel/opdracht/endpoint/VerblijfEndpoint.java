@@ -3,11 +3,13 @@ package nl.dierenasiel.opdracht.endpoint;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;
 import nl.dierenasiel.opdracht.services.DierenAsielService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+@ApplicationScoped
 @Path("/verblijf")
 public class VerblijfEndpoint {
 
