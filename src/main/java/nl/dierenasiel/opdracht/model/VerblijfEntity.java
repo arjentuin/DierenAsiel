@@ -13,7 +13,12 @@ import java.util.Set;
 @Setter
 @Entity(name = "Verblijf")
 @Table(name = "Verblijf", uniqueConstraints = {@UniqueConstraint(columnNames = "id")})
-@NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM Verblijf f")
+@NamedQueries({
+        @NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM Verblijf f"),
+        @NamedQuery(name = "Verblijf.findById", query = "SELECT f FROM Verblijf f WHERE f.id = :id"),
+        @NamedQuery(name = "Verblijf.deleteById", query = "DELETE FROM Verblijf f WHERE f.id = :id")
+})
+
 public class VerblijfEntity implements Serializable {
 
     private static final long serialVersionUID = -1798070786993154656L;

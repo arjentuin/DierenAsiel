@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
         @UniqueConstraint(columnNames = "id")})
 @NamedQueries({
         @NamedQuery(name = "Dier.findAll", query = "SELECT f FROM Dier f"),
-        @NamedQuery(name = "Dier.findById", query = "SELECT f FROM Dier f WHERE f.id = :id")
+        @NamedQuery(name = "Dier.findById", query = "SELECT f FROM Dier f WHERE f.id = :id"),
+        @NamedQuery(name = "Dier.deleteById", query = "DELETE FROM Dier f WHERE f.id = :id")
 })
-
 public class DierEntity implements Serializable {
     private static final long serialVersionUID = -6790693372846798581L;
 
@@ -36,7 +36,7 @@ public class DierEntity implements Serializable {
     @Column(name = "registratie_datum")
     private LocalDateTime registratieDatum;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne()
     private VerblijfEntity verblijf;
 
 }
