@@ -1,12 +1,10 @@
 package nl.dierenasiel.opdracht.endpoint;
 
 import nl.dierenasiel.opdracht.dto.DierDto;
-import nl.dierenasiel.opdracht.model.DierEntity;
 import nl.dierenasiel.opdracht.services.DierService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.swing.text.html.parser.Entity;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;

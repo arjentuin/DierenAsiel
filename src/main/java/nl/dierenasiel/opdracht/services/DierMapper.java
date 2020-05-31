@@ -23,6 +23,7 @@ public class DierMapper {
         if (dierEntity.getVerblijf() != null) {
             verblijfDto.setId(dierEntity.getVerblijf().getId());
             verblijfDto.setNaam(dierEntity.getVerblijf().getNaam());
+            verblijfDto.setCapaciteit(dierEntity.getVerblijf().getCapaciteit());
         }
         dierDto.setVerblijf(verblijfDto);
         return dierDto;

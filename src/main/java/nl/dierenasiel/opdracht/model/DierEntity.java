@@ -4,6 +4,7 @@ package nl.dierenasiel.opdracht.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import nl.dierenasiel.opdracht.enums.DierSoort;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -31,7 +32,8 @@ public class DierEntity implements Serializable {
     private String naam;
 
     @Column(name = "soort")
-    private String soort;
+    @Enumerated(EnumType.STRING)
+    private DierSoort soort;
 
     @Column(name = "registratie_datum")
     private LocalDateTime registratieDatum;

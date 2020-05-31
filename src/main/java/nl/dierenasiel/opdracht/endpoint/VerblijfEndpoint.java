@@ -1,6 +1,5 @@
 package nl.dierenasiel.opdracht.endpoint;
 
-import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;
 import nl.dierenasiel.opdracht.services.VerblijfService;
 

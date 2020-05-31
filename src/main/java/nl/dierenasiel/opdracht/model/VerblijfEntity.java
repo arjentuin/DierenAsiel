@@ -3,6 +3,7 @@ package nl.dierenasiel.opdracht.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import nl.dierenasiel.opdracht.enums.VerblijfType;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,6 +17,7 @@ import java.util.Set;
 @NamedQueries({
         @NamedQuery(name = "Verblijf.findAll", query = "SELECT f FROM Verblijf f"),
         @NamedQuery(name = "Verblijf.findById", query = "SELECT f FROM Verblijf f WHERE f.id = :id"),
+        @NamedQuery(name = "Verblijf.findByVerblijfType", query = "SELECT f FROM Verblijf f WHERE f.verblijfType = :verblijfType"),
         @NamedQuery(name = "Verblijf.deleteById", query = "DELETE FROM Verblijf f WHERE f.id = :id")
 })
 
@@ -30,6 +32,13 @@ public class VerblijfEntity implements Serializable {
 
     @Column(name = "naam")
     private String naam;
+
+    @Column(name = "capaciteit")
+    private Integer capaciteit;
+
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    private VerblijfType verblijfType;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "verblijf")
     private Set<DierEntity> dieren;
