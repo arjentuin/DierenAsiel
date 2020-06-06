@@ -2,7 +2,7 @@ package nl.dierenasiel.opdracht.services;
 
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;
-import nl.dierenasiel.opdracht.model.DierEntity;
+import nl.dierenasiel.opdracht.entities.Dier;
 
 import javax.enterprise.context.ApplicationScoped;
 
@@ -12,18 +12,18 @@ public class DierMapper {
     public DierMapper() {
     }
 
-    public DierDto toDierDto(DierEntity dierEntity) {
+    public DierDto toDierDto(Dier dier) {
         DierDto dierDto = new DierDto();
-        dierDto.setId(dierEntity.getId());
-        dierDto.setNaam(dierEntity.getNaam());
-        dierDto.setRegistratieDatum(dierEntity.getRegistratieDatum());
-        dierDto.setSoort(dierEntity.getSoort());
+        dierDto.setId(dier.getId());
+        dierDto.setNaam(dier.getNaam());
+        dierDto.setRegistratieDatum(dier.getRegistratieDatum());
+        dierDto.setSoort(dier.getSoort());
 
         VerblijfDto verblijfDto = new VerblijfDto();
-        if (dierEntity.getVerblijf() != null) {
-            verblijfDto.setId(dierEntity.getVerblijf().getId());
-            verblijfDto.setNaam(dierEntity.getVerblijf().getNaam());
-            verblijfDto.setCapaciteit(dierEntity.getVerblijf().getCapaciteit());
+        if (dier.getVerblijf() != null) {
+            verblijfDto.setId(dier.getVerblijf().getId());
+            verblijfDto.setNaam(dier.getVerblijf().getNaam());
+            verblijfDto.setCapaciteit(dier.getVerblijf().getCapaciteit());
         }
         dierDto.setVerblijf(verblijfDto);
         return dierDto;

@@ -4,18 +4,18 @@ import nl.dierenasiel.opdracht.dao.DierDao;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.DierenDto;
+import nl.dierenasiel.opdracht.entities.Dier;
+import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.exception.EntityNotFoundException;
 import nl.dierenasiel.opdracht.exception.PreConditionFailedException;
-import nl.dierenasiel.opdracht.model.DierEntity;
-import nl.dierenasiel.opdracht.model.VerblijfEntity;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
+@Stateless
 public class DierService {
 
     private DierMapper dierMapper;
@@ -35,63 +35,51 @@ public class DierService {
     }
 
     public DierenDto getDieren() {
-        List<DierEntity> dierEntityList = dierDao.findAll();
+        List<Dier> dierList = dierDao.findAll();
         DierenDto dierenDto = new DierenDto();
         List<DierDto> dierDtoList = new ArrayList<>();
-        dierEntityList.forEach(dierEntity -> dierDtoList.add(dierMapper.toDierDto(dierEntity)));
+        dierList.forEach(dierEntity -> dierDtoList.add(dierMapper.toDierDto(dierEntity)));
         dierenDto.setContent(dierDtoList);
         return dierenDto;
     }
 
     public DierDto getDier(long dierId) {
-        List<DierEntity> result = dierDao.getDierById(dierId);
-        if (result.isEmpty()) {
-            throw new EntityNotFoundException();
-        }
-        DierEntity dierEntity = result.get(0);
-        return dierMapper.toDierDto(dierEntity);
+        Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
+        return dierMapper.toDierDto(dier);
     }
 
-
     public void createDier(DierDto dierDto) {
-        DierEntity dierEntity = new DierEntity();
+        Dier dier = new Dier();
 
-        dierEntity.setNaam(dierDto.getNaam());
-        dierEntity.setSoort(dierDto.getSoort());
-        dierEntity.setRegistratieDatum(LocalDateTime.now());
+        dier.setNaam(dierDto.getNaam());
+        dier.setSoort(dierDto.getSoort());
+        dier.setRegistratieDatum(LocalDateTime.now());
 
-        List<VerblijfEntity> result = verblijfDao.getVerblijfByType(dierDto.getVerblijfType());
+        List<Verblijf> verblijfList = verblijfDao.findVerblijfEntitiesByVerblijfType(dierDto.getVerblijfType())
+                .orElseThrow(() -> new PreConditionFailedException(String.format("No [%s] verblijf for animal with name [%s]", dierDto.getVerblijfType(), dierDto.getNaam())));
 
-        if (result.isEmpty()) {
-            throw new PreConditionFailedException(String.format("No [%s] verblijf for animal with name [%s]", dierDto.getVerblijfType(), dierDto.getNaam()));
-        } else {
-            result.stream()
-                    .filter(v -> v.getDieren().size() < v.getCapaciteit())
-                    .findFirst()
-                    .ifPresent(dierEntity::setVerblijf);
-            if (dierEntity.getVerblijf() == null) {
-                throw new PreConditionFailedException("Out of space, no capacity available.");
-            }
+        verblijfList.stream()
+                .filter(v -> v.getDieren().size() < v.getCapaciteit())
+                .findFirst()
+                .ifPresent(dier::setVerblijf);
+        if (dier.getVerblijf() == null) {
+            throw new PreConditionFailedException("Out of space, no capacity available.");
         }
-        dierDao.saveDier(dierEntity);
+        dierDao.save(dier);
     }
 
     public void updateDier(Long dierId, DierDto dierDto) {
-        List<DierEntity> result = dierDao.getDierById(dierId);
-        if (result.isEmpty()) {
-            throw new EntityNotFoundException();
-        }
-        DierEntity dierEntity = result.get(0);
-        dierEntity.setNaam(dierDto.getNaam());
-        dierEntity.setSoort(dierDto.getSoort());
+        Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
+        dier.setNaam(dierDto.getNaam());
+        dier.setSoort(dierDto.getSoort());
         if (dierDto.getVerblijf() != null) {
-            VerblijfEntity verblijfEntity = verblijfDao.findById(dierDto.getVerblijf().getId()).stream().findFirst().orElseThrow(EntityNotFoundException::new);
-            dierEntity.setVerblijf(verblijfEntity);
+            Verblijf verblijf = verblijfDao.findById(dierDto.getVerblijf().getId()).orElseThrow(EntityNotFoundException::new);
+            dier.setVerblijf(verblijf);
         }
-        dierDao.saveDier(dierEntity);
+
     }
 
     public void deleteDier(long dierId) {
-        dierDao.deleteDier(dierId);
+        dierDao.deleteById(dierId);
     }
 }

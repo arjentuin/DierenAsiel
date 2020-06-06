@@ -1,40 +1,16 @@
 package nl.dierenasiel.opdracht.dao;
 
-import nl.dierenasiel.opdracht.model.VerblijfEntity;
+import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.cdi.Eager;
 
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
+import java.util.Optional;
 
-@Stateless
-public class VerblijfDao {
+@Eager
+public interface VerblijfDao extends JpaRepository<Verblijf, Long> {
 
-    @PersistenceContext
-    private EntityManager em;
+    Optional<List<Verblijf>> findVerblijfEntitiesByVerblijfType(VerblijfType verblijfType);
 
-    public VerblijfDao() {
-    }
-
-    public List<VerblijfEntity> findAll() {
-        return em.createNamedQuery("Verblijf.findAll").getResultList();
-    }
-
-    public List<VerblijfEntity> getVerblijfByType(VerblijfType verblijfType) {
-        return em.createNamedQuery("Verblijf.findByVerblijfType", VerblijfEntity.class).setParameter("verblijfType", verblijfType).getResultList();
-    }
-
-    public List<VerblijfEntity> findById(long verblijfId) {
-        return em.createNamedQuery("Verblijf.findById", VerblijfEntity.class).setParameter("id", verblijfId).getResultList();
-    }
-
-
-    public void saveVerblijf(VerblijfEntity verblijfEntity) {
-        em.persist(verblijfEntity);
-    }
-
-    public void deleteVerblijf(long verblijfId) {
-        em.createNamedQuery("Verblijf.deleteById").setParameter("id", verblijfId).executeUpdate();
-    }
 }

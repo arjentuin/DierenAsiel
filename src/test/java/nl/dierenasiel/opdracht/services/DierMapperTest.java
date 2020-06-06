@@ -1,9 +1,9 @@
 package nl.dierenasiel.opdracht.services;
 
 import nl.dierenasiel.opdracht.dto.DierDto;
-import nl.dierenasiel.opdracht.model.DierEntity;
+import nl.dierenasiel.opdracht.entities.Dier;
 import nl.dierenasiel.opdracht.enums.DierSoort;
-import nl.dierenasiel.opdracht.model.VerblijfEntity;
+import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -32,20 +32,20 @@ class DierMapperTest {
         final String verblijfNaam = "Konijnen oord";
         final VerblijfType verblijfType = VerblijfType.KNAAGDIEREN;
         final LocalDateTime registratieDatum = LocalDateTime.of(2020, 6, 1, 12, 34, 45);
-        VerblijfEntity verblijfEntity = new VerblijfEntity();
-        verblijfEntity.setId(verblijfId);
-        verblijfEntity.setCapaciteit(verblijfCapaciteit);
-        verblijfEntity.setNaam(verblijfNaam);
-        verblijfEntity.setVerblijfType(verblijfType);
+        Verblijf verblijf = new Verblijf();
+        verblijf.setId(verblijfId);
+        verblijf.setCapaciteit(verblijfCapaciteit);
+        verblijf.setNaam(verblijfNaam);
+        verblijf.setVerblijfType(verblijfType);
 
-        DierEntity dierEntity = new DierEntity();
-        dierEntity.setId(id);
-        dierEntity.setNaam(naam);
-        dierEntity.setSoort(soort);
-        dierEntity.setVerblijf(verblijfEntity);
+        Dier dier = new Dier();
+        dier.setId(id);
+        dier.setNaam(naam);
+        dier.setSoort(soort);
+        dier.setVerblijf(verblijf);
 
-        dierEntity.setRegistratieDatum(registratieDatum);
-        DierDto result = cut.toDierDto(dierEntity);
+        dier.setRegistratieDatum(registratieDatum);
+        DierDto result = cut.toDierDto(dier);
 
         assertThat(result.getId(), is(id));
         assertThat(result.getNaam(), is(naam));

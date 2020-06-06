@@ -4,16 +4,16 @@
              version="2.1">
     <persistence-unit name="cursus" transaction-type="JTA">
         <jta-data-source>java:jboss/datasources/DierenAsielDS</jta-data-source>
-        <class>nl.dierenasiel.opdracht.model.DierEntity</class>
-        <class>nl.dierenasiel.opdracht.model.VerblijfEntity</class>
+        <class>nl.dierenasiel.opdracht.entities.Dier</class>
+        <class>nl.dierenasiel.opdracht.entities.Verblijf</class>
 
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db:3306/cursus?useSSL=false" />
-            <property name="javax.persistence.jdbc.user" value="user" />
-            <property name="javax.persistence.jdbc.password" value="user" />
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
-            <property name="hibernate.show_sql" value="false" />
-            <property name="hibernate.format_sql" value="true" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://db:3306/cursus?useSSL=false"/>
+            <property name="javax.persistence.jdbc.user" value="user"/>
+            <property name="javax.persistence.jdbc.password" value="user"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
         </properties>

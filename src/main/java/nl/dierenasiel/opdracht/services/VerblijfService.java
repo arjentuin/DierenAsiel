@@ -1,28 +1,25 @@
 package nl.dierenasiel.opdracht.services;
 
+import lombok.NoArgsConstructor;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;
 import nl.dierenasiel.opdracht.dto.VerblijvenDto;
+import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.exception.EntityNotFoundException;
-import nl.dierenasiel.opdracht.model.VerblijfEntity;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
 @ApplicationScoped
+@NoArgsConstructor
 public class VerblijfService {
 
     private DierMapper dierMapper;
 
     private VerblijfDao verblijfDao;
-
-    public VerblijfService() {
-    }
 
     @Inject
     public VerblijfService(DierMapper dierMapper, VerblijfDao verblijfDao) {
@@ -31,7 +28,7 @@ public class VerblijfService {
     }
 
     public VerblijvenDto getVerblijven() {
-        List<VerblijfEntity> result = verblijfDao.findAll();
+        List<Verblijf> result = verblijfDao.findAll();
 
         List<VerblijfDto> verblijfDtoList = new ArrayList<>();
         result.forEach(verblijfEntity -> {
@@ -55,33 +52,33 @@ public class VerblijfService {
 
 
     public void createVerblijf(VerblijfDto verblijfDto) {
-        VerblijfEntity verblijfEntity = new VerblijfEntity();
-        verblijfEntity.setNaam(verblijfDto.getNaam());
-        verblijfEntity.setCapaciteit(verblijfDto.getCapaciteit());
-        verblijfEntity.setVerblijfType(verblijfDto.getVerblijfType());
-        verblijfDao.saveVerblijf(verblijfEntity);
+        Verblijf verblijf = new Verblijf();
+        verblijf.setNaam(verblijfDto.getNaam());
+        verblijf.setCapaciteit(verblijfDto.getCapaciteit());
+        verblijf.setVerblijfType(verblijfDto.getVerblijfType());
+        verblijfDao.save(verblijf);
     }
 
 
     public VerblijfDto getVerblijf(long verblijfId) {
-        VerblijfEntity verblijfEntity = verblijfDao.findById(verblijfId).stream().findFirst().orElseThrow(EntityNotFoundException::new);
+        Verblijf verblijf = verblijfDao.findById(verblijfId).orElseThrow(EntityNotFoundException::new);
         VerblijfDto verblijfDto = new VerblijfDto();
-        verblijfDto.setId(verblijfEntity.getId());
-        verblijfDto.setNaam(verblijfEntity.getNaam());
+        verblijfDto.setId(verblijf.getId());
+        verblijfDto.setNaam(verblijf.getNaam());
         return verblijfDto;
     }
 
     public void updateVerblijf(long verblijfId, VerblijfDto verblijfDto) {
-        VerblijfEntity verblijfEntity = verblijfDao.findById(verblijfId).stream().findFirst().orElseThrow(EntityNotFoundException::new);
-        verblijfEntity.setNaam(verblijfDto.getNaam());
-        verblijfEntity.setCapaciteit(verblijfDto.getCapaciteit());
-        verblijfDao.saveVerblijf(verblijfEntity);
+        Verblijf verblijf = verblijfDao.findById(verblijfId).orElseThrow(EntityNotFoundException::new);
+        verblijf.setNaam(verblijfDto.getNaam());
+        verblijf.setCapaciteit(verblijfDto.getCapaciteit());
+        verblijfDao.save(verblijf);
     }
 
     public void deleteVerblijf(long verblijfId) {
-        VerblijfEntity verblijfEntity = verblijfDao.findById(verblijfId).stream().findFirst().orElseThrow(EntityNotFoundException::new);
-        verblijfEntity.getDieren().forEach(dier -> dier.setVerblijf(null));
-        verblijfDao.deleteVerblijf(verblijfId);
+        Verblijf verblijf = verblijfDao.findById(verblijfId).orElseThrow(EntityNotFoundException::new);
+        verblijf.getDieren().forEach(dier -> dier.setVerblijf(null));
+        verblijfDao.delete(verblijf);
 
 
     }
