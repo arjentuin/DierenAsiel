@@ -8,6 +8,7 @@ import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
 import nl.dierenasiel.opdracht.exception.PreConditionFailedException;
+import nl.dierenasiel.opdracht.mapper.DierMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
@@ -18,7 +19,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.*;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -51,7 +55,7 @@ class DierServiceTest {
         when(verblijfDao.findVerblijfEntitiesByVerblijfType(VerblijfType.GEVOGELTE)).thenReturn(Optional.of(Collections.EMPTY_LIST));
 
         assertThrows(PreConditionFailedException.class, () -> {
-            cut.createDier(dierDto);
+            cut.registerDier(dierDto);
         });
     }
 
@@ -75,7 +79,7 @@ class DierServiceTest {
         when(verblijfDao.findVerblijfEntitiesByVerblijfType(VerblijfType.GEVOGELTE)).thenReturn(Optional.of(verblijfList));
 
         assertThrows(PreConditionFailedException.class, () -> {
-            cut.createDier(dierDto);
+            cut.registerDier(dierDto);
         });
     }
 
@@ -85,7 +89,6 @@ class DierServiceTest {
         dierDto.setNaam(NAAM);
         dierDto.setSoort(DierSoort.EEND);
         dierDto.setVerblijfType(VerblijfType.GEVOGELTE);
-
 
         Verblijf verblijf = createVerblijfEntity(VerblijfType.GEVOGELTE, 4);
         Set<Dier> dierSet = new HashSet<>();
@@ -97,10 +100,10 @@ class DierServiceTest {
         verblijfList.add(verblijf);
 
         when(verblijfDao.findVerblijfEntitiesByVerblijfType(VerblijfType.GEVOGELTE)).thenReturn(Optional.of(verblijfList));
-        cut.createDier(dierDto);
-//        verify(dierDao).saveDier(dierEntityArgumentCaptor.capture());
-//        DierEntity result = dierEntityArgumentCaptor.getValue();
-//        assertThat(result.getNaam(), is(NAAM));
+        cut.registerDier(dierDto);
+        verify(dierDao).save(dierEntityArgumentCaptor.capture());
+        Dier result = dierEntityArgumentCaptor.getValue();
+        assertThat(result.getNaam(), is(NAAM));
     }
 
     private Verblijf createVerblijfEntity(VerblijfType verblijfType, int capaciteit) {

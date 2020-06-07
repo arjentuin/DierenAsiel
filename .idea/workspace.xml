@@ -6,21 +6,24 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f46a30d-0ab0-4b0e-a06e-32330b3c6916" name="Default Changelist" comment="exceptions en capaciteit-verblijf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/config/PersistenceConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Interesse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Persoon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" afterDir="false" />
+    <list default="true" id="3f46a30d-0ab0-4b0e-a06e-32330b3c6916" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/InteresseDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/PersoonDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/InteresseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/PersoonDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/InteresseEndpoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/mapper/PersoonMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/InteresseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/DierDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/DierDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/VerblijfDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dao/VerblijfDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/exception/EntityNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/exception/EntityNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/model/DierEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Dier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/model/VerblijfEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Verblijf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/DierDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/DierDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/VerblijfDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/VerblijfDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/VerblijfEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/VerblijfEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Dier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/entities/Dier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/enums/VerblijfType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/enums/VerblijfType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/mapper/DierMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/VerblijfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/VerblijfService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
@@ -58,6 +61,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -184,7 +188,7 @@
       <module name="DierenAsiel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.dierenasiel.opdracht.services.*" />
+          <option name="PATTERN" value="nl.dierenasiel.opdracht.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -199,7 +203,7 @@
       <module name="DierenAsiel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.dierenasiel.opdracht.services.*" />
+          <option name="PATTERN" value="nl.dierenasiel.opdracht.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -215,7 +219,7 @@
       <module name="DierenAsiel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.dierenasiel.opdracht.services.*" />
+          <option name="PATTERN" value="nl.dierenasiel.opdracht.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,7 +235,7 @@
       <module name="DierenAsiel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.dierenasiel.opdracht.services.*" />
+          <option name="PATTERN" value="nl.dierenasiel.opdracht.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -247,7 +251,7 @@
       <module name="DierenAsiel" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.dierenasiel.opdracht.services.*" />
+          <option name="PATTERN" value="nl.dierenasiel.opdracht.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -269,11 +273,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DierServiceTest" />
         <item itemvalue="JUnit.DierServiceTest.testCreateDier_NoVerblijf" />
         <item itemvalue="JUnit.DierServiceTest.testCreateDierVerblijf_OK" />
         <item itemvalue="JUnit.DierServiceTest.testCreateDierVerblijfFull" />
         <item itemvalue="JUnit.DierServiceTest.testCreateDierNoVerblijf" />
-        <item itemvalue="JUnit.DierServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -330,7 +334,9 @@
       <workItem from="1591185816429" duration="1541000" />
       <workItem from="1591430738638" duration="3537000" />
       <workItem from="1591434316024" duration="3556000" />
-      <workItem from="1591440331223" duration="504000" />
+      <workItem from="1591440331223" duration="821000" />
+      <workItem from="1591466417562" duration="3122000" />
+      <workItem from="1591521182803" duration="9231000" />
     </task>
     <task id="LOCAL-00001" summary="beign is er">
       <created>1589729019870</created>
@@ -423,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590949695071</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="JPA en start van persoon + interesse">
+      <created>1591440877854</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591440877854</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +465,8 @@
     <MESSAGE value="Dierenasiel endpoint" />
     <MESSAGE value="get, post, update, delete" />
     <MESSAGE value="Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tests" />
+    <MESSAGE value="JPA en start van persoon + interesse" />
+    <option name="LAST_COMMIT_MESSAGE" value="JPA en start van persoon + interesse" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="358" key="#Assign_Data_Sources" timestamp="1589828178621">
@@ -472,15 +486,15 @@
     </state>
     <state x="734" y="58" width="1092" height="987" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590757562053" />
     <state x="551" y="43" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590331420704" />
-    <state x="1050" y="401" key="#com.intellij.ide.util.MemberChooser" timestamp="1591431226760">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="788" y="298" key="#com.intellij.ide.util.MemberChooser" timestamp="1591533458963">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="910" y="166" key="#com.intellij.ide.util.MemberChooser.inPresentationMode" timestamp="1591087488744">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="910" y="166" key="#com.intellij.ide.util.MemberChooser.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591087488744" />
     <state x="1050" y="401" key="#com.intellij.ide.util.MemberChooser/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591431226760" />
-    <state x="788" y="298" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590323043608" />
+    <state x="788" y="298" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591533458963" />
     <state x="896" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591440392600">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -494,10 +508,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1015" y="196" key="#docker-wildfly/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589620620193" />
-    <state x="905" y="294" key="CommitChangelistDialog2" timestamp="1591440839000">
+    <state x="905" y="294" key="CommitChangelistDialog2" timestamp="1591440877181">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440839000" />
+    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440877181" />
     <state x="679" y="218" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1590331905229" />
     <state width="502" height="466" key="DebuggerActiveHint" timestamp="1590949016510">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -508,42 +522,42 @@
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590785401499" />
     <state x="795" y="338" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590326605139" />
-    <state width="2005" height="549" key="GridCell.Tab.0.bottom" timestamp="1591440765179">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1489" height="389" key="GridCell.Tab.0.bottom" timestamp="1591533593954">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1591436505894">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.bottom.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591436505894" />
     <state width="2005" height="549" key="GridCell.Tab.0.bottom/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440765179" />
-    <state width="1877" height="348" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590331942383" />
-    <state width="2005" height="549" key="GridCell.Tab.0.center" timestamp="1591440765179">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1489" height="389" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591533593954" />
+    <state width="1489" height="389" key="GridCell.Tab.0.center" timestamp="1591533593954">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1591436505894">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.center.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591436505894" />
     <state width="2005" height="549" key="GridCell.Tab.0.center/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440765179" />
-    <state width="1877" height="348" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590331942383" />
-    <state width="2005" height="549" key="GridCell.Tab.0.left" timestamp="1591440765179">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1489" height="389" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591533593954" />
+    <state width="1489" height="389" key="GridCell.Tab.0.left" timestamp="1591533593954">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1591436505894">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.left.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591436505894" />
     <state width="2005" height="549" key="GridCell.Tab.0.left/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440765179" />
-    <state width="1877" height="348" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590331942383" />
-    <state width="2005" height="549" key="GridCell.Tab.0.right" timestamp="1591440765179">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1489" height="389" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591533593954" />
+    <state width="1489" height="389" key="GridCell.Tab.0.right" timestamp="1591533593954">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1591436505894">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="584" key="GridCell.Tab.0.right.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591436505894" />
     <state width="2005" height="549" key="GridCell.Tab.0.right/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440765179" />
-    <state width="1877" height="348" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590331942383" />
+    <state width="1489" height="389" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591533593954" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1590952481015">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -588,10 +602,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="497" key="SwitcherDM/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591431804379" />
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1590949696356">
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1591440879980">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590949696356" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440879980" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590331906899" />
     <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590769187206">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -613,23 +627,23 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="455" width="540" height="496" key="extract.method.dialog/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591087050464" />
-    <state x="976" y="218" width="1118" height="750" key="find.popup" timestamp="1591433087579">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="733" y="163" width="839" height="558" key="find.popup" timestamp="1591473778344">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="976" y="218" width="1118" height="750" key="find.popup/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591433087579" />
-    <state x="733" y="163" width="839" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590331350133" />
+    <state x="733" y="163" width="839" height="558" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591473778344" />
     <state x="936" y="330" key="run.anything.popup" timestamp="1591435836284">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="936" y="330" key="run.anything.popup/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591435836284" />
-    <state x="936" y="353" width="672" height="676" key="search.everywhere.popup" timestamp="1591435886245">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state x="702" y="262" width="672" height="503" key="search.everywhere.popup" timestamp="1591522072857">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="608" y="0" width="1344" height="1396" key="search.everywhere.popup.inPresentationMode" timestamp="1591436548930">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="608" y="0" width="1344" height="1396" key="search.everywhere.popup.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591436548930" />
     <state x="936" y="353" width="672" height="676" key="search.everywhere.popup/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591435886245" />
-    <state x="702" y="262" width="672" height="503" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590324715596" />
+    <state x="702" y="262" width="672" height="503" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591522072857" />
   </component>
 </project>

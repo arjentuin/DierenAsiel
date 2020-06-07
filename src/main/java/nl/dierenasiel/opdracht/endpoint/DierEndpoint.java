@@ -1,6 +1,7 @@
 package nl.dierenasiel.opdracht.endpoint;
 
 import nl.dierenasiel.opdracht.dto.DierDto;
+import nl.dierenasiel.opdracht.entities.Dier;
 import nl.dierenasiel.opdracht.services.DierService;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -39,9 +40,9 @@ public class DierEndpoint {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createDier(DierDto dier) {
-        dierService.createDier(dier);
-        return Response.ok(dierService.getDieren()).build();
+    public Response registerDier(DierDto dier) {
+        Dier savedDier = dierService.registerDier(dier);
+        return Response.ok(dierService.getDierenWithGeinsteresseerden(savedDier)).build();
     }
 
     @PUT
@@ -60,4 +61,14 @@ public class DierEndpoint {
         dierService.deleteDier(dierId);
         return Response.noContent().build();
     }
+
+    @PUT
+    @Path("{dierId}/adopt")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response adoptDier(@PathParam("dierId") final long dierId) {
+        dierService.adoptDier(dierId);
+        return Response.ok(dierService.getDieren()).build();
+    }
+
 }

@@ -1,19 +1,28 @@
 package nl.dierenasiel.opdracht.services;
 
 import nl.dierenasiel.opdracht.dao.DierDao;
+import nl.dierenasiel.opdracht.dao.InteresseDao;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.DierenDto;
+import nl.dierenasiel.opdracht.dto.PersoonDto;
 import nl.dierenasiel.opdracht.entities.Dier;
+import nl.dierenasiel.opdracht.entities.Interesse;
+import nl.dierenasiel.opdracht.entities.Persoon;
 import nl.dierenasiel.opdracht.entities.Verblijf;
+import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.exception.EntityNotFoundException;
 import nl.dierenasiel.opdracht.exception.PreConditionFailedException;
+import nl.dierenasiel.opdracht.mapper.DierMapper;
+import nl.dierenasiel.opdracht.mapper.PersoonMapper;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Stateless
 public class DierService {
@@ -24,14 +33,20 @@ public class DierService {
 
     private VerblijfDao verblijfDao;
 
+    private InteresseDao interesseDao;
+
+    private PersoonMapper persoonMapper;
+
     public DierService() {
     }
 
     @Inject
-    public DierService(DierMapper dierMapper, DierDao dierDao, VerblijfDao verblijfDao) {
+    public DierService(DierMapper dierMapper, DierDao dierDao, VerblijfDao verblijfDao, InteresseDao interesseDao, PersoonMapper persoonMapper) {
         this.dierMapper = dierMapper;
         this.dierDao = dierDao;
         this.verblijfDao = verblijfDao;
+        this.interesseDao = interesseDao;
+        this.persoonMapper = persoonMapper;
     }
 
     public DierenDto getDieren() {
@@ -48,7 +63,7 @@ public class DierService {
         return dierMapper.toDierDto(dier);
     }
 
-    public void createDier(DierDto dierDto) {
+    public Dier registerDier(DierDto dierDto) {
         Dier dier = new Dier();
 
         dier.setNaam(dierDto.getNaam());
@@ -56,7 +71,7 @@ public class DierService {
         dier.setRegistratieDatum(LocalDateTime.now());
 
         List<Verblijf> verblijfList = verblijfDao.findVerblijfEntitiesByVerblijfType(dierDto.getVerblijfType())
-                .orElseThrow(() -> new PreConditionFailedException(String.format("No [%s] verblijf for animal with name [%s]", dierDto.getVerblijfType(), dierDto.getNaam())));
+                .orElseThrow(() -> new PreConditionFailedException(String.format("No '%s' verblijf for animal with name '%s'", dierDto.getVerblijfType(), dierDto.getNaam())));
 
         verblijfList.stream()
                 .filter(v -> v.getDieren().size() < v.getCapaciteit())
@@ -65,7 +80,7 @@ public class DierService {
         if (dier.getVerblijf() == null) {
             throw new PreConditionFailedException("Out of space, no capacity available.");
         }
-        dierDao.save(dier);
+        return dierDao.save(dier);
     }
 
     public void updateDier(Long dierId, DierDto dierDto) {
@@ -81,5 +96,31 @@ public class DierService {
 
     public void deleteDier(long dierId) {
         dierDao.deleteById(dierId);
+    }
+
+    public List<DierDto> getBeschikbareDierenInSoorten(List<DierSoort> dierSoortSet) {
+        List<DierDto> dierDtoList = new ArrayList<>();
+        dierDao.findDiersByIsBeschikbaarAndSoortIn(1, dierSoortSet).orElse(Collections.emptyList()).forEach(dier -> {
+            dierDtoList.add(dierMapper.toDierDto(dier));
+        });
+        return dierDtoList;
+    }
+
+    public void adoptDier(long dierId) {
+        Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
+        dier.setIsBeschikbaar(0);
+        dierDao.save(dier);
+    }
+
+    public DierDto getDierenWithGeinsteresseerden(Dier dier) {
+
+        DierDto dierDto = dierMapper.toDierDto(dier);
+        List<PersoonDto> persoonDtoList = interesseDao.findBySoort(dier.getSoort()).orElse(Collections.emptyList()).stream()
+                .map(Interesse::getPersoon)
+                .map(persoonMapper::toPersoonDto)
+                .collect(Collectors.toList());
+
+        dierDto.setGeinteresseerden(persoonDtoList);
+        return dierDto;
     }
 }

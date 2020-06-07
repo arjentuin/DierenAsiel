@@ -56,7 +56,7 @@ public class VerblijfEndpoint {
     @DELETE
     @Path("{verblijfId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response deleteDier(@PathParam("verblijfId") final long verblijfId) {
+    public Response deleteVerblijf(@PathParam("verblijfId") final long verblijfId) {
         verblijfService.deleteVerblijf(verblijfId);
         return Response.noContent().build();
     }

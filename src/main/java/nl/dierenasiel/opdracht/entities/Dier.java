@@ -29,6 +29,9 @@ public class Dier {
     @Column(name = "registratie_datum")
     private LocalDateTime registratieDatum;
 
+    @Column(name = "isBeschikbaar", columnDefinition="tinyint(1) default 1")
+    private int isBeschikbaar;
+
     @ManyToOne()
     private Verblijf verblijf;
 

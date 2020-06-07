@@ -2,7 +2,6 @@ package nl.dierenasiel.opdracht.dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
 
 import java.util.List;
@@ -15,6 +14,5 @@ public class VerblijfDto {
     private String naam;
     private List<DierDto> dieren;
     private Integer capaciteit;
-    private DierSoort soort;
     private VerblijfType verblijfType;
 }

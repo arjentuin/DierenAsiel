@@ -1,25 +1,27 @@
 package nl.dierenasiel.opdracht.services;
 
-import lombok.NoArgsConstructor;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;
 import nl.dierenasiel.opdracht.dto.VerblijvenDto;
 import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.exception.EntityNotFoundException;
+import nl.dierenasiel.opdracht.mapper.DierMapper;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
-@ApplicationScoped
-@NoArgsConstructor
+@Stateless
 public class VerblijfService {
 
     private DierMapper dierMapper;
 
     private VerblijfDao verblijfDao;
+
+    public VerblijfService() {
+    }
 
     @Inject
     public VerblijfService(DierMapper dierMapper, VerblijfDao verblijfDao) {
@@ -35,10 +37,12 @@ public class VerblijfService {
             VerblijfDto verblijfDto = new VerblijfDto();
             verblijfDto.setId(verblijfEntity.getId());
             verblijfDto.setNaam(verblijfEntity.getNaam());
+            verblijfDto.setCapaciteit(verblijfEntity.getCapaciteit());
+            verblijfDto.setVerblijfType(verblijfEntity.getVerblijfType());
 
             List<DierDto> dierDtoList = new ArrayList<>();
-            verblijfEntity.getDieren().forEach(dierEntity -> {
-                dierDtoList.add(dierMapper.toDierDto(dierEntity));
+            verblijfEntity.getDieren().forEach(dier -> {
+                dierDtoList.add(dierMapper.toDierDto(dier));
             });
             verblijfDto.setDieren(dierDtoList);
 
@@ -65,6 +69,7 @@ public class VerblijfService {
         VerblijfDto verblijfDto = new VerblijfDto();
         verblijfDto.setId(verblijf.getId());
         verblijfDto.setNaam(verblijf.getNaam());
+        verblijfDto.setCapaciteit(verblijf.getCapaciteit());
         return verblijfDto;
     }
 

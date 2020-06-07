@@ -5,6 +5,7 @@ import nl.dierenasiel.opdracht.entities.Dier;
 import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
+import nl.dierenasiel.opdracht.mapper.DierMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

@@ -1,4 +1,4 @@
-package nl.dierenasiel.opdracht.services;
+package nl.dierenasiel.opdracht.mapper;
 
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.VerblijfDto;

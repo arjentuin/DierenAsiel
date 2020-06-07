@@ -6,6 +6,7 @@ import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.enums.VerblijfType;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @NoArgsConstructor
 @Data
@@ -17,5 +18,6 @@ public class DierDto {
     private LocalDateTime registratieDatum;
     private VerblijfDto verblijf;
     private VerblijfType verblijfType;
+    private List<PersoonDto> geinteresseerden;
 
 }
