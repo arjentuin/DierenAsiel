@@ -6,6 +6,8 @@ import nl.dierenasiel.opdracht.services.DierService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
+import javax.jms.JMSException;
+import javax.naming.NamingException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -33,7 +35,7 @@ public class DierEndpoint {
     @GET
     @Path("{dierId}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getDier(@PathParam("dierId") final long dierId) {
+    public Response getDier(@PathParam("dierId") final long dierId) throws Exception {
         return Response.ok(dierService.getDier(dierId)).build();
     }
 

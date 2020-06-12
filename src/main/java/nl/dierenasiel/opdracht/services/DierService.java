@@ -8,16 +8,18 @@ import nl.dierenasiel.opdracht.dto.DierenDto;
 import nl.dierenasiel.opdracht.dto.PersoonDto;
 import nl.dierenasiel.opdracht.entities.Dier;
 import nl.dierenasiel.opdracht.entities.Interesse;
-import nl.dierenasiel.opdracht.entities.Persoon;
 import nl.dierenasiel.opdracht.entities.Verblijf;
 import nl.dierenasiel.opdracht.enums.DierSoort;
 import nl.dierenasiel.opdracht.exception.EntityNotFoundException;
 import nl.dierenasiel.opdracht.exception.PreConditionFailedException;
 import nl.dierenasiel.opdracht.mapper.DierMapper;
 import nl.dierenasiel.opdracht.mapper.PersoonMapper;
+import nl.dierenasiel.opdracht.messaging.Sender;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
+import javax.jms.JMSException;
+import javax.naming.NamingException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,17 +37,20 @@ public class DierService {
 
     private InteresseDao interesseDao;
 
+    private Sender sender;
+
     private PersoonMapper persoonMapper;
 
     public DierService() {
     }
 
     @Inject
-    public DierService(DierMapper dierMapper, DierDao dierDao, VerblijfDao verblijfDao, InteresseDao interesseDao, PersoonMapper persoonMapper) {
+    public DierService(DierMapper dierMapper, DierDao dierDao, VerblijfDao verblijfDao, InteresseDao interesseDao, Sender sender, PersoonMapper persoonMapper) {
         this.dierMapper = dierMapper;
         this.dierDao = dierDao;
         this.verblijfDao = verblijfDao;
         this.interesseDao = interesseDao;
+        this.sender = sender;
         this.persoonMapper = persoonMapper;
     }
 
@@ -58,8 +63,9 @@ public class DierService {
         return dierenDto;
     }
 
-    public DierDto getDier(long dierId) {
+    public DierDto getDier(long dierId) throws NamingException, JMSException {
         Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
+        sender.sendMessage("FLIPMODE");
         return dierMapper.toDierDto(dier);
     }
 
@@ -121,6 +127,9 @@ public class DierService {
                 .collect(Collectors.toList());
 
         dierDto.setGeinteresseerden(persoonDtoList);
+
+
+
         return dierDto;
     }
 }
