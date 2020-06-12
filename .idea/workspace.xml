@@ -7,16 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f46a30d-0ab0-4b0e-a06e-32330b3c6916" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/config/JmsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Receiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Sender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/PersoonDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/dto/PersoonDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Receiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/messaging/Sender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/dierenasiel/opdracht/services/DierService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -289,12 +283,6 @@
                 <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
                 <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="JBoss Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="docker-wildfly" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -338,7 +326,7 @@
       <workItem from="1591605876256" duration="669000" />
       <workItem from="1591794022348" duration="816000" />
       <workItem from="1591978686641" duration="1194000" />
-      <workItem from="1591979915877" duration="963000" />
+      <workItem from="1591979915877" duration="2421000" />
     </task>
     <task id="LOCAL-00001" summary="beign is er">
       <created>1589729019870</created>
@@ -445,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591533695800</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Instellingen intellj verkeerde dependencies">
+      <created>1591980984053</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591980984053</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +471,8 @@
     <MESSAGE value="Tests" />
     <MESSAGE value="JPA en start van persoon + interesse" />
     <MESSAGE value="Opdracht geinteresseerde" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opdracht geinteresseerde" />
+    <MESSAGE value="Instellingen intellj verkeerde dependencies" />
+    <option name="LAST_COMMIT_MESSAGE" value="Instellingen intellj verkeerde dependencies" />
   </component>
   <component name="WindowStateProjectService">
     <state x="872" y="358" key="#Assign_Data_Sources" timestamp="1589828178621">
@@ -518,10 +514,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1015" y="196" key="#docker-wildfly/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1589620620193" />
-    <state x="679" y="218" key="CommitChangelistDialog2" timestamp="1591533695127">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="905" y="294" key="CommitChangelistDialog2" timestamp="1591980983287">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440877181" />
+    <state x="905" y="294" key="CommitChangelistDialog2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980983287" />
     <state x="679" y="218" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1591533695127" />
     <state width="502" height="466" key="DebuggerActiveHint" timestamp="1590949016510">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -532,41 +528,41 @@
     </state>
     <state x="1060" y="455" key="FileChooserDialogImpl/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1590785401499" />
     <state x="795" y="338" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590326605139" />
-    <state width="2005" height="547" key="GridCell.Tab.0.bottom" timestamp="1591980878048">
+    <state width="2005" height="547" key="GridCell.Tab.0.bottom" timestamp="1591981970668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.bottom.inPresentationMode" timestamp="1591606399844">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.bottom.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591606399844" />
-    <state width="2005" height="547" key="GridCell.Tab.0.bottom/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980878048" />
+    <state width="2005" height="547" key="GridCell.Tab.0.bottom/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591981970668" />
     <state width="1489" height="389" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591533731744" />
-    <state width="2005" height="547" key="GridCell.Tab.0.center" timestamp="1591980878048">
+    <state width="2005" height="547" key="GridCell.Tab.0.center" timestamp="1591981970668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.center.inPresentationMode" timestamp="1591606399844">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.center.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591606399844" />
-    <state width="2005" height="547" key="GridCell.Tab.0.center/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980878048" />
+    <state width="2005" height="547" key="GridCell.Tab.0.center/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591981970668" />
     <state width="1489" height="389" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591533731744" />
-    <state width="2005" height="547" key="GridCell.Tab.0.left" timestamp="1591980878048">
+    <state width="2005" height="547" key="GridCell.Tab.0.left" timestamp="1591981970668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.left.inPresentationMode" timestamp="1591606399844">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.left.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591606399844" />
-    <state width="2005" height="547" key="GridCell.Tab.0.left/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980878048" />
+    <state width="2005" height="547" key="GridCell.Tab.0.left/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591981970668" />
     <state width="1489" height="389" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591533731744" />
-    <state width="2005" height="547" key="GridCell.Tab.0.right" timestamp="1591980878048">
+    <state width="2005" height="547" key="GridCell.Tab.0.right" timestamp="1591981970668">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.right.inPresentationMode" timestamp="1591606399844">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="2021" height="582" key="GridCell.Tab.0.right.inPresentationMode/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591606399844" />
-    <state width="2005" height="547" key="GridCell.Tab.0.right/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980878048" />
+    <state width="2005" height="547" key="GridCell.Tab.0.right/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591981970668" />
     <state width="1489" height="389" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591533731744" />
     <state width="2517" height="492" key="GridCell.Tab.1.bottom" timestamp="1590952481015">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -612,10 +608,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="497" key="SwitcherDM/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591431804379" />
-    <state x="654" y="322" key="Vcs.Push.Dialog.v2" timestamp="1591533697265">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1591980985449">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591440879980" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/-1920.360.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1591980985449" />
     <state x="654" y="322" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591533697265" />
     <state x="92" y="92" width="2376" height="1216" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590769187206">
       <screen x="0" y="0" width="2560" height="1400" />

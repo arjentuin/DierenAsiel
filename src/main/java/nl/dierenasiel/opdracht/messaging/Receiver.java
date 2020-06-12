@@ -19,13 +19,10 @@ import javax.jms.MessageListener;
 )
 public class Receiver implements MessageListener {
 
-
     @Override
     public void onMessage(Message message) {
-
         try {
             System.out.println("Message received!  " + message.getBody(String.class));
-//            animalService.addAnimal(message.getBody(Animal.class));
         } catch (JMSException e) {
             e.printStackTrace();
         }

@@ -5,7 +5,6 @@ import nl.dierenasiel.opdracht.dao.InteresseDao;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
 import nl.dierenasiel.opdracht.dto.DierenDto;
-import nl.dierenasiel.opdracht.dto.PersoonDto;
 import nl.dierenasiel.opdracht.entities.Dier;
 import nl.dierenasiel.opdracht.entities.Interesse;
 import nl.dierenasiel.opdracht.entities.Verblijf;
@@ -18,8 +17,6 @@ import nl.dierenasiel.opdracht.messaging.Sender;
 
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import javax.jms.JMSException;
-import javax.naming.NamingException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -63,9 +60,8 @@ public class DierService {
         return dierenDto;
     }
 
-    public DierDto getDier(long dierId) throws NamingException, JMSException {
+    public DierDto getDier(long dierId) {
         Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
-        sender.sendMessage("FLIPMODE");
         return dierMapper.toDierDto(dier);
     }
 
@@ -118,18 +114,10 @@ public class DierService {
         dierDao.save(dier);
     }
 
-    public DierDto getDierenWithGeinsteresseerden(Dier dier) {
-
-        DierDto dierDto = dierMapper.toDierDto(dier);
-        List<PersoonDto> persoonDtoList = interesseDao.findBySoort(dier.getSoort()).orElse(Collections.emptyList()).stream()
+    public void sendGeinteresseerden(Dier dier) {
+        interesseDao.findBySoort(dier.getSoort()).orElse(Collections.emptyList()).stream()
                 .map(Interesse::getPersoon)
                 .map(persoonMapper::toPersoonDto)
-                .collect(Collectors.toList());
-
-        dierDto.setGeinteresseerden(persoonDtoList);
-
-
-
-        return dierDto;
+                .collect(Collectors.toList()).forEach(persoonDto -> sender.sendMessage(persoonDto.getEmailadres()));
     }
 }
