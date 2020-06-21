@@ -6,13 +6,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 public class PersistenceConfig {
-
+    @Produces
+    @Dependent
     @PersistenceContext
     private EntityManager entityManager;
 
-    @Produces
-    @Dependent
-    public EntityManager getEntityManager() {
-        return entityManager;
-    }
+
 }

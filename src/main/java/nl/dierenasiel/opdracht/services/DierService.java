@@ -1,6 +1,7 @@
 package nl.dierenasiel.opdracht.services;
 
 import nl.dierenasiel.opdracht.dao.DierDao;
+import nl.dierenasiel.opdracht.dao.DierDsl;
 import nl.dierenasiel.opdracht.dao.InteresseDao;
 import nl.dierenasiel.opdracht.dao.VerblijfDao;
 import nl.dierenasiel.opdracht.dto.DierDto;
@@ -30,6 +31,8 @@ public class DierService {
 
     private DierDao dierDao;
 
+    private DierDsl dierDsl;
+
     private VerblijfDao verblijfDao;
 
     private InteresseDao interesseDao;
@@ -42,9 +45,10 @@ public class DierService {
     }
 
     @Inject
-    public DierService(DierMapper dierMapper, DierDao dierDao, VerblijfDao verblijfDao, InteresseDao interesseDao, Sender sender, PersoonMapper persoonMapper) {
+    public DierService(DierMapper dierMapper, DierDao dierDao, DierDsl dierDsl, VerblijfDao verblijfDao, InteresseDao interesseDao, Sender sender, PersoonMapper persoonMapper) {
         this.dierMapper = dierMapper;
         this.dierDao = dierDao;
+        this.dierDsl = dierDsl;
         this.verblijfDao = verblijfDao;
         this.interesseDao = interesseDao;
         this.sender = sender;
@@ -61,7 +65,7 @@ public class DierService {
     }
 
     public DierDto getDier(long dierId) {
-        Dier dier = dierDao.findById(dierId).orElseThrow(EntityNotFoundException::new);
+        Dier dier = dierDsl.getDierById(dierId);
         return dierMapper.toDierDto(dier);
     }
 

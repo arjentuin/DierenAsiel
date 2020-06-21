@@ -7,8 +7,6 @@ q
 Asrc/main/java/nl/dierenasiel/opdracht/DierenAsielApplication.java,e\2\e2ca5559f4e7308bcf4de8bf0eacc0fd0bf08a35
 p
 @src/main/java/nl/dierenasiel/opdracht/endpoint/DierEndpoint.java,1\7\17fb7e29a836d1529db50edef0d4a1da5be4f29f
-W
-'.idea/libraries/Java_EE_6_Java_EE_6.xml,d\e\de547daf4b9e3e50cc4e8f5d80bd27749df7c357
 h
 8src/main/java/nl/dierenasiel/opdracht/dto/DierenDto.java,7\9\79ebadb14d627b5dfe86ab093738ae59bc44aa61
 j
@@ -57,8 +55,6 @@ k
 ;src/main/java/nl/dierenasiel/opdracht/dto/InteresseDto.java,4\6\463d6bf007f4e57654e485caf01a409ecec6e870
 t
 Dsrc/main/java/nl/dierenasiel/opdracht/services/InteresseService.java,e\e\eea9938aecc29e8aa21183ce5f8bbfd325eb9894
-[
-+src/main/resources/META-INF/persistence.xml,3\b\3be4f79b5828b3982f3f6a62bf8fc67b3adedf58
 k
 ;src/main/java/nl/dierenasiel/opdracht/dao/InteresseDao.java,4\0\4045af5509c7023f8c114cb2135b4420d7f255df
 h
@@ -71,5 +67,7 @@ k
 ;src/main/java/nl/dierenasiel/opdracht/entities/Persoon.java,8\d\8de22bcabec53bac6254631b6e5d95ada3e6f306
 k
 ;src/main/java/nl/dierenasiel/opdracht/config/JmsConfig.java,1\6\16d2d74e2446c07c57358d8b8cf9047e0bee4155
-p
-@src/main/java/nl/dierenasiel/opdracht/messaging/SendMessage.java,2\6\26cd3f03334749ba3f7fae97cf66f1aeeb4a58e9
+m
+=src/main/java/nl/dierenasiel/opdracht/messaging/Receiver.java,e\3\e3a0d3d95f5979de727423f79fc1c61ed5574192
+k
+;src/main/java/nl/dierenasiel/opdracht/messaging/Sender.java,3\a\3ae8fb2a7feb9ba5b662acf7b9b8df5c11fbc8be
